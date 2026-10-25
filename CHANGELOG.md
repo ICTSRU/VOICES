@@ -2,6 +2,20 @@
 
 Versioning: single digit after the decimal point (… 1.8 → 1.9 → 2.0).
 
+## [1.5] – 2026-10-25
+### Changed
+- `API_URL` set to the deployed Web App (`AKfycbzTEm8y…`), using the standard `/macros/s/…/exec` form.
+- Clearer connection-error message pointing to the "Anyone" access setting.
+- `SETUP.md`: warning against the domain-only access option (it redirects to the sr.edu.sa login and blocks the page).
+
+## [1.4] – 2026-10-25
+### Added
+- `quickStart()` one-click setup in `Code.gs`: creates/checks the sheets, installs the daily reminder, adds the running account and `SETUP_ADMINS` as admins, and shows a ✔/✖ setup checklist. Safe to re-run; never duplicates or deletes data.
+- **SRU Voice** menu in the Google Sheet: Quick start, Check setup, Add admin…, Web App link, Send overdue reminder now.
+- Google Sheet database created in Drive: *SRU Voice – Database v1.3* (tabs اقرأني, Submissions, Votes, StatusLog, SignInLog, Admins).
+### Changed
+- `SETUP.md` steps 5–7 replaced by the single quick-start step.
+
 ## [1.3] – 2026-10-14
 ### Fixed
 - Logos showed as text on the sign-in screen when the shared files at `ictsru.github.io/ITOC/assets/` could not be reached. A compact built-in copy of each logo is now used automatically whenever a shared file fails to load (sign-in card, header and footer, including logos drawn by the Brand Kit). The shared ITOC files stay the primary source.

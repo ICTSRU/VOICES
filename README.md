@@ -1,4 +1,4 @@
-# SRU Voice – منصة صوت الطالب · v1.3
+# SRU Voice – منصة صوت الطالب · v1.5
 
 **Sulaiman Al Rajhi University · ICTD – IT Operations Center (ITOC)**
 
@@ -25,7 +25,7 @@ A student voice platform: submit suggestions and complaints, vote on public idea
 ## Repository layout
 
 ```
-sru-voice-v1.3/
+sru-voice-v1.5/
 ├── index.html              # Front end (GitHub Pages) – CONFIG block at the top
 ├── apps-script/
 │   ├── Code.gs             # Backend (Google Apps Script bound to the Google Sheet)
@@ -41,7 +41,7 @@ No logos are stored in this repository. The header and footer come from the shar
 
 ```html
 <script src="https://ictsru.github.io/ITOC/brand/sru-brand.js"
-        data-form-title="منصة صوت الطالب · SRU Voice" data-form-version="v1.3" defer></script>
+        data-form-title="منصة صوت الطالب · SRU Voice" data-form-version="v1.5" defer></script>
 ```
 
 | Logo | Shared file |

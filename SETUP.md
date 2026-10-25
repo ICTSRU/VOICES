@@ -1,4 +1,4 @@
-# SRU Voice v1.3 – Setup Guide | دليل التشغيل
+# SRU Voice v1.5 – Setup Guide | دليل التشغيل
 
 Estimated time: **20–30 minutes**. Steps 1–3 are done once.
 
@@ -19,15 +19,20 @@ Estimated time: **20–30 minutes**. Steps 1–3 are done once.
    - `ALLOWED_DOMAINS` → keep `['sr.edu.sa','srcolleges.org']` or reduce to `['sr.edu.sa']`
    - `PLATFORM_URL` → final GitHub Pages URL (used in e-mail buttons)
    - Notification switches and `SLA_DAYS` as needed
-5. Run **`setup`** once (authorise when prompted) → the 5 sheets are created.
-6. Run **`installTriggers`** once → daily 08:00 SLA reminder.
-7. Add admin e-mails in the **`Admins`** sheet (column A).
+5. *(Optional)* add more admins to `SETUP_ADMINS` at the top of `Code.gs`, e.g. `['name@sr.edu.sa', 'الاسم'],`.
+6. Select **`quickStart`** in the toolbar → **Run** → authorise. In one click it:
+   - creates/checks the 5 sheets (existing data is never touched),
+   - installs the daily 08:00 reminder,
+   - adds you (and `SETUP_ADMINS`) to `Admins`,
+   - shows a ✔/✖ checklist (sheets, admins, CLIENT_ID, reminder, deployment, mail quota).
+7. Reload the Google Sheet: a new **SRU Voice** menu appears with *Quick start*, *Check setup*, *Add admin…*, *Web App link* and *Send overdue reminder now*.
 
 ## 3. Deploy the Web App
 1. **Deploy → New deployment → Web app**
    - Execute as: **Me**
    - Who has access: **Anyone**  *(required so the GitHub page can call it; every call is still authenticated by the Google ID token)*
-2. Copy the **Web app URL** ending in `/exec`.
+   > ⚠️ Do **not** choose "Anyone within Sulaiman Al Rajhi University". That option gives a `/a/macros/sr.edu.sa/…` link that redirects to the university login page, so the browser blocks every call from GitHub Pages and the platform cannot load data.
+2. Copy the **Web app URL** ending in `/exec` (also available any time from **SRU Voice ▸ رابط الـ Web App المنشور**). Run **SRU Voice ▸ فحص الإعداد** – every line should now be ✔.
 3. After any later change to `Code.gs`: **Deploy → Manage deployments → Edit → New version** (keeps the same URL).
 
 ## 4. Configure and publish the front end
@@ -37,7 +42,7 @@ Estimated time: **20–30 minutes**. Steps 1–3 are done once.
    GOOGLE_CLIENT_ID: 'XXXX.apps.googleusercontent.com',
    ```
 2. Logos load from the shared ITOC Brand Kit – nothing to add. Make sure ITOC **v2.6** (official logos) is published.
-3. Push the `sru-voice-v1.3` contents to the GitHub repository and enable **Settings → Pages**.
+3. Push the `sru-voice-v1.5` contents to the GitHub repository and enable **Settings → Pages**.
 
 ## 5. Acceptance checklist
 | # | Test | Expected |
